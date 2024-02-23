@@ -4,7 +4,7 @@ export const Setting = {
 
 export enum AppRoute {
   Login = '/login',
-  Main = '/',
+  Root = '/',
   Favorites = '/favorites',
   Offer = '/offer/:id'
 }
