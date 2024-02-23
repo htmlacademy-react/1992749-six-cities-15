@@ -4,7 +4,7 @@ type MainScreenProps = {
   numberOfCards: number;
 }
 
-function MainScreen({numberOfCards}: MainScreenProps): JSX.Element {
+export default function MainScreen({numberOfCards}: MainScreenProps): JSX.Element {
 
   const showCards = numberOfCards > 0 ? Array.from({length: numberOfCards}, (_, index) => <PlaceCard key={index} />) : 'you need to choose a place';
 
@@ -82,5 +82,4 @@ function MainScreen({numberOfCards}: MainScreenProps): JSX.Element {
   );
 }
 
-export default MainScreen;
 

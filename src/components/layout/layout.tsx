@@ -1,24 +1,12 @@
 import { Outlet, useLocation } from 'react-router-dom';
-import { AppRoute } from '../../const';
+import { AppRoute, AuthorizationStatus } from '../../const';
+import { getLayoutState } from './utils';
+import { getAuthorizationStatus } from '../../authorizationStatus';
 
-const getLayoutState = (pathname: AppRoute) => {
-  let rootClassName = '';
-  let linkClassName = '';
-  let shouldRenderUser = true;
-
-  if (pathname === AppRoute.Root) {
-    rootClassName = 'page--gray page--main';
-    linkClassName = 'header__logo-link--active';
-  } else if (pathname === AppRoute.Login) {
-    rootClassName = 'page--gray page--login';
-    shouldRenderUser = false;
-  }
-  return {rootClassName, linkClassName, shouldRenderUser};
-};
-
-function Layout() {
+export default function Layout() {
   const {pathname} = useLocation();
-  const {rootClassName, linkClassName, shouldRenderUser} = getLayoutState(pathname as AppRoute);
+  const {rootClassName, linkClassName, shouldRenderUser, shouldRendeFooter} = getLayoutState(pathname as AppRoute);
+  const authorizationStatus = getAuthorizationStatus();
 
   return (
     <div className={`page${rootClassName}`}>
@@ -38,15 +26,21 @@ function Layout() {
                       <a className="header__nav-link header__nav-link--profile" href="#">
                         <div className="header__avatar-wrapper user__avatar-wrapper">
                         </div>
-                        <span className="header__user-name user__name">Oliver.conner@gmail.com</span>
-                        <span className="header__favorite-count">3</span>
+                        {authorizationStatus === AuthorizationStatus.Auth ? (
+                          <>
+                            <span className="header__user-name user__name">Oliver.conner@gmail.com</span>
+                            <span className="header__favorite-count">3</span>
+                          </>
+                        ) : <span className="header__login">Sign in</span>}
                       </a>
                     </li>
-                    <li className="header__nav-item">
-                      <a className="header__nav-link" href="#">
-                        <span className="header__signout">Sign out</span>
-                      </a>
-                    </li>
+                    {authorizationStatus === AuthorizationStatus.Auth ? (
+                      <li className="header__nav-item">
+                        <a className="header__nav-link" href="#">
+                          <span className="header__signout">Sign out</span>
+                        </a>
+                      </li>
+                    ) : null}
                   </ul>
                 </nav>
               ) : null
@@ -55,9 +49,15 @@ function Layout() {
         </div>
       </header>
       <Outlet />
+      {shouldRendeFooter ? (
+        <footer className="footer container">
+          <a className="footer__logo-link" href="main.html">
+            <img className="footer__logo" src="img/logo.svg" alt="6 cities logo" width="64" height="33" />
+          </a>
+        </footer>
+      ) : null}
     </div>
   );
 
 }
 
-export default Layout;

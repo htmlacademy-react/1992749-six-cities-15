@@ -1,4 +1,4 @@
-function NotFoundScreen(): JSX.Element {
+export default function NotFoundScreen(): JSX.Element {
   return (
     <section >
       <header >
@@ -13,4 +13,3 @@ function NotFoundScreen(): JSX.Element {
   );
 }
 
-export default NotFoundScreen;

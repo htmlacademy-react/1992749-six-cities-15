@@ -1,4 +1,4 @@
-function OfferNotLoggedScreen(): JSX.Element {
+export default function OfferNotLoggedScreen(): JSX.Element {
   return (
     <div className="page">
       <header className="header">
@@ -283,5 +283,3 @@ function OfferNotLoggedScreen(): JSX.Element {
     </div>
   );
 }
-
-export default OfferNotLoggedScreen;

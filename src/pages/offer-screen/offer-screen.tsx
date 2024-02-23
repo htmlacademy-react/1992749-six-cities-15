@@ -1,4 +1,4 @@
-function OfferScreen(): JSX.Element {
+export default function OfferScreen(): JSX.Element {
   return (
     <main className="page__main page__main--offer">
       <section className="offer">
@@ -306,4 +306,3 @@ function OfferScreen(): JSX.Element {
   );
 }
 
-export default OfferScreen;

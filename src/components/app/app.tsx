@@ -12,7 +12,7 @@ type AppScreenProps = {
   numberOfCards: number;
 }
 
-function App({numberOfCards}: AppScreenProps): JSX.Element {
+export default function App({numberOfCards}: AppScreenProps): JSX.Element {
   return (
     <BrowserRouter>
       <Routes>
@@ -49,4 +49,3 @@ function App({numberOfCards}: AppScreenProps): JSX.Element {
   );
 }
 
-export default App;
