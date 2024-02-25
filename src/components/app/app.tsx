@@ -1,3 +1,4 @@
+import { JSX } from 'react';
 import MainScreen from '../../pages/main-screen/main-screen';
 import { AppRoute } from '../../const';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
@@ -13,7 +14,7 @@ type AppScreenProps = {
   numberOfCards: number;
 }
 
-export default function App({numberOfCards}: AppScreenProps) {
+export default function App({numberOfCards}: AppScreenProps): JSX.Element {
   const authorizationStatus = getAuthorizationStatus();
 
   return (

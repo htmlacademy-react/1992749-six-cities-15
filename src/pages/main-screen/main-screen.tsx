@@ -1,3 +1,4 @@
+import { JSX } from 'react';
 import PlaceCard from '../../components/place-card/place-card';
 
 type MainScreenProps = {

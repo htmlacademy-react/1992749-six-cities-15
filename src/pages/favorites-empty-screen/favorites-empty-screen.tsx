@@ -1,3 +1,5 @@
+import { JSX } from 'react';
+
 export default function FavoritesEmptyScreen(): JSX.Element {
   return (
     <div className="page page--favorites-empty">

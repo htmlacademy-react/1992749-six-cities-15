@@ -1,3 +1,5 @@
+import { JSX } from 'react';
+
 export default function FavoritesScreen(): JSX.Element {
   return (
     <main className="page__main page__main--favorites">
