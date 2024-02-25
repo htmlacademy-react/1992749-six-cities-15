@@ -1,4 +1,6 @@
-function OfferNotLoggedScreen(): JSX.Element {
+import { JSX } from 'react';
+
+export default function OfferNotLoggedScreen(): JSX.Element {
   return (
     <div className="page">
       <header className="header">
@@ -283,5 +285,3 @@ function OfferNotLoggedScreen(): JSX.Element {
     </div>
   );
 }
-
-export default OfferNotLoggedScreen;

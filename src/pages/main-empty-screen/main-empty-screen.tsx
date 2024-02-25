@@ -1,4 +1,6 @@
-function MainEmptyScreen(): JSX.Element {
+import { JSX } from 'react';
+
+export default function MainEmptyScreen(): JSX.Element {
   return (
     <div className="page page--gray page--main">
       <header className="header">
@@ -83,5 +85,3 @@ function MainEmptyScreen(): JSX.Element {
     </div>
   );
 }
-
-export default MainEmptyScreen;
