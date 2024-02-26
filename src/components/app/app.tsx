@@ -9,12 +9,14 @@ import NotFoundScreen from '../../pages/not-found-screen/not-found-screen';
 import PrivateRoute from '../private-route/private-route';
 import Layout from '../layout/layout';
 import { getAuthorizationStatus } from '../../authorizationStatus';
+import { Offers } from '../../mocks/types';
 
 type AppScreenProps = {
   numberOfCards: number;
+  offers: Offers;
 }
 
-export default function App({numberOfCards}: AppScreenProps): JSX.Element {
+export default function App({numberOfCards, offers}: AppScreenProps): JSX.Element {
   const authorizationStatus = getAuthorizationStatus();
 
   return (
