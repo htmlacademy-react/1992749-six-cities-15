@@ -1,13 +1,14 @@
 import { JSX } from 'react';
 import PlaceCard from '../../components/place-card/place-card';
+import { Offers } from '../../mocks/types';
 
 type MainScreenProps = {
-  numberOfCards: number;
+  offers: Offers;
 }
 
-export default function MainScreen({numberOfCards}: MainScreenProps): JSX.Element {
+export default function MainScreen({offers}: MainScreenProps): JSX.Element {
 
-  const showCards = numberOfCards > 0 ? Array.from({length: numberOfCards}, (_, index) => <PlaceCard key={index} />) : 'you need to choose a place';
+  const showCards = offers.map((item) => <PlaceCard card={item} key={item.id}/>);
 
   return (
     <main className="page__main page__main--index">

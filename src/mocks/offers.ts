@@ -3,7 +3,7 @@ import { Offers } from './types';
 export const offers: Offers = [{
   id: '111ddfd5-b953-4a30-8c8d-bd083cd6b62a',
   title: 'Beautiful & luxurious studio at great location',
-  type: 'apartment',
+  type: 'room',
   price: 120,
   city: {
     name: 'Amsterdam',
@@ -20,7 +20,7 @@ export const offers: Offers = [{
   },
   isFavorite: false,
   isPremium: false,
-  rating: 4,
+  rating: 3,
   description: 'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
   bedrooms: 3,
   goods: [
@@ -56,7 +56,7 @@ export const offers: Offers = [{
   },
   isFavorite: false,
   isPremium: false,
-  rating: 4,
+  rating: 5,
   description: 'Paris is the capital and largest city of France. Located in the north of the state.',
   bedrooms: 3,
   goods: [
@@ -92,7 +92,7 @@ export const offers: Offers = [{
   },
   isFavorite: false,
   isPremium: false,
-  rating: 4,
+  rating: 6,
   description: 'Cologne is the fourth largest city in Germany, as well as one of the countrys most important religious and tourist centers.',
   bedrooms: 3,
   goods: [
@@ -128,7 +128,7 @@ export const offers: Offers = [{
   },
   isFavorite: false,
   isPremium: false,
-  rating: 4,
+  rating: 2,
   description: 'Brussels is the capital of Belgium, located in the center of Europe.',
   bedrooms: 3,
   goods: [

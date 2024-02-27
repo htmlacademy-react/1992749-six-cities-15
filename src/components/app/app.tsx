@@ -12,11 +12,10 @@ import { getAuthorizationStatus } from '../../authorizationStatus';
 import { Offers } from '../../mocks/types';
 
 type AppScreenProps = {
-  numberOfCards: number;
   offers: Offers;
 }
 
-export default function App({numberOfCards, offers}: AppScreenProps): JSX.Element {
+export default function App({offers}: AppScreenProps): JSX.Element {
   const authorizationStatus = getAuthorizationStatus();
 
   return (
@@ -25,7 +24,7 @@ export default function App({numberOfCards, offers}: AppScreenProps): JSX.Elemen
         <Route path={AppRoute.Root} element={<Layout />}>
           <Route
             index
-            element={<MainScreen numberOfCards={numberOfCards} />}
+            element={<MainScreen offers={offers} />}
           />
           <Route
             path={AppRoute.Login}
