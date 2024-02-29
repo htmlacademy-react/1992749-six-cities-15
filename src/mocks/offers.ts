@@ -18,8 +18,8 @@ export const offers: Offers = [{
     longitude: 4.673877537499948,
     zoom: 8
   },
-  isFavorite: false,
-  isPremium: false,
+  isFavorite: true,
+  isPremium: true,
   rating: 3,
   description: 'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
   bedrooms: 3,
@@ -54,8 +54,8 @@ export const offers: Offers = [{
     longitude: 4.673877537499948,
     zoom: 8
   },
-  isFavorite: false,
-  isPremium: false,
+  isFavorite: true,
+  isPremium: true,
   rating: 5,
   description: 'Paris is the capital and largest city of France. Located in the north of the state.',
   bedrooms: 3,
