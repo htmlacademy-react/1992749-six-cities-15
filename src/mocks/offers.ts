@@ -20,7 +20,7 @@ export const offers: Offers = [{
   },
   isFavorite: true,
   isPremium: true,
-  rating: 3,
+  rating: 2.8,
   description: 'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
   bedrooms: 3,
   goods: [
@@ -56,7 +56,7 @@ export const offers: Offers = [{
   },
   isFavorite: true,
   isPremium: true,
-  rating: 5,
+  rating: 3.1,
   description: 'Paris is the capital and largest city of France. Located in the north of the state.',
   bedrooms: 3,
   goods: [
@@ -92,7 +92,7 @@ export const offers: Offers = [{
   },
   isFavorite: false,
   isPremium: false,
-  rating: 6,
+  rating: 4.3,
   description: 'Cologne is the fourth largest city in Germany, as well as one of the countrys most important religious and tourist centers.',
   bedrooms: 3,
   goods: [
@@ -128,7 +128,7 @@ export const offers: Offers = [{
   },
   isFavorite: false,
   isPremium: false,
-  rating: 2,
+  rating: 2.2,
   description: 'Brussels is the capital of Belgium, located in the center of Europe.',
   bedrooms: 3,
   goods: [

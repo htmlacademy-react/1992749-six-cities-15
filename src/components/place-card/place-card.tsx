@@ -1,6 +1,6 @@
 import { JSX } from 'react';
 import { Offer } from '../../mocks/types';
-import { newStr } from '../../utils';
+import { getNewStr, getRoundNumber } from '../../utils';
 
 export default function PlaceCard({card}:{card: Offer}): JSX.Element {
   const {price, title, type, rating, images, isPremium, isFavorite} = card;
@@ -34,14 +34,14 @@ export default function PlaceCard({card}:{card: Offer}): JSX.Element {
         </div>
         <div className="place-card__rating rating">
           <div className="place-card__stars rating__stars">
-            <span style={{width: `${rating}0%`}}></span>
+            <span style={{width: `${getRoundNumber(rating)}0%`}}></span>
             <span className="visually-hidden">Rating</span>
           </div>
         </div>
         <h2 className="place-card__name">
           <a href="#">{title}</a>
         </h2>
-        <p className="place-card__type">{newStr(type)}</p>
+        <p className="place-card__type">{getNewStr(type)}</p>
       </div>
     </article>
   );

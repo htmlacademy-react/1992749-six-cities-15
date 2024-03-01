@@ -1,6 +1,6 @@
 import { JSX } from 'react';
 import { Offers } from '../../mocks/types';
-import { newStr } from '../../utils';
+import { getNewStr, getRoundNumber } from '../../utils';
 
 type FavoritesScreen = {
   offers: Offers;
@@ -51,14 +51,14 @@ export default function FavoritesScreen({offers}: FavoritesScreen): JSX.Element 
                         </div>
                         <div className="place-card__rating rating">
                           <div className="place-card__stars rating__stars">
-                            <span style={{width: `${item.rating}0%`}}></span>
+                            <span style={{width: `${getRoundNumber(item.rating)}0%`}}></span>
                             <span className="visually-hidden">Rating</span>
                           </div>
                         </div>
                         <h2 className="place-card__name">
                           <a href="#">Nice, cozy, warm big bed apartment</a>
                         </h2>
-                        <p className="place-card__type">{newStr(item.type)}</p>
+                        <p className="place-card__type">{getNewStr(item.type)}</p>
                       </div>
                     </article>
                   )

@@ -44,7 +44,7 @@ export default function App({offers}: AppScreenProps): JSX.Element {
           />
           <Route
             path={AppRoute.Offer}
-            element={<OfferScreen />}
+            element={<OfferScreen offers={offers}/>}
           />
           <Route
             path='*'
