@@ -2,11 +2,16 @@ import { JSX } from 'react';
 import { Offer } from '../../mocks/types';
 import { getNewStr, getRoundNumber } from '../../utils';
 
-export default function PlaceCard({card}:{card: Offer}): JSX.Element {
+type PlaceCardProps = {
+  card: Offer;
+  classCard: string;
+}
+
+export default function PlaceCard({card, classCard}: PlaceCardProps): JSX.Element {
   const {price, title, type, rating, images, isPremium, isFavorite} = card;
 
   return (
-    <article className="cities__card place-card">
+    <article className={classCard}>
       {!isPremium ? '' :
         <div className="place-card__mark">
           <span>Premium</span>

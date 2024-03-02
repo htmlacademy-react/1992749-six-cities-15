@@ -7,7 +7,7 @@ type FavoritesScreen = {
 }
 
 export default function FavoritesScreen({offers}: FavoritesScreen): JSX.Element {
-  const showCards = offers.filter((item) => item.isFavorite);
+  const findFavorites = offers.filter((item) => item.isFavorite);
 
   return (
     <main className="page__main page__main--favorites">
@@ -25,7 +25,7 @@ export default function FavoritesScreen({offers}: FavoritesScreen): JSX.Element 
               </div>
               <div className="favorites__places">
 
-                {showCards.map((item) =>
+                {findFavorites.map((item) =>
                   (
                     <article className="favorites__card place-card" key={item.id}>
                       <div className="place-card__mark">

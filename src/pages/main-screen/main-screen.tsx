@@ -2,13 +2,15 @@ import { JSX } from 'react';
 import PlaceCard from '../../components/place-card/place-card';
 import { Offers } from '../../mocks/types';
 
+const CLASS_MAIN_SCREEN = 'cities__card place-card';
+
 type MainScreenProps = {
   offers: Offers;
 }
 
 export default function MainScreen({offers}: MainScreenProps): JSX.Element {
 
-  const showCards = offers.map((item) => <PlaceCard card={item} key={item.id}/>);
+  const showCards = offers.map((item) => <PlaceCard card={item} key={item.id} classCard={CLASS_MAIN_SCREEN}/>);
 
   return (
     <main className="page__main page__main--index">

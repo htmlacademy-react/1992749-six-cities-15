@@ -22,19 +22,24 @@ export const offers: Offers = [{
   isPremium: true,
   rating: 2.8,
   description: 'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
-  bedrooms: 3,
+  bedrooms: 1,
   goods: [
     'Heating'
   ],
   host: {
     name: 'Oliver',
     avatarUrl: `https://i.pravatar.cc/128?rnd=${Math.random()}`,
-    isPro: false
+    isPro: true
   },
   images: [
-    `https://i.pravatar.cc/128?rnd=${Math.random()}`
+    `https://i.pravatar.cc/128?rnd=${Math.random()}`,
+    `https://i.pravatar.cc/128?rnd=${Math.random()}`,
+    `https://i.pravatar.cc/128?rnd=${Math.random()}`,
+    `https://i.pravatar.cc/128?rnd=${Math.random()}`,
+    `https://i.pravatar.cc/128?rnd=${Math.random()}`,
+    `https://i.pravatar.cc/128?rnd=${Math.random()}`,
   ],
-  maxAdults: 4
+  maxAdults: 1
 },
 {
   id: '222ddfd5-b953-4a30-8c8d-bd083cd6b62a',
@@ -58,7 +63,7 @@ export const offers: Offers = [{
   isPremium: true,
   rating: 3.1,
   description: 'Paris is the capital and largest city of France. Located in the north of the state.',
-  bedrooms: 3,
+  bedrooms: 1,
   goods: [
     'Heating'
   ],
@@ -68,7 +73,12 @@ export const offers: Offers = [{
     isPro: false
   },
   images: [
-    `https://i.pravatar.cc/128?rnd=${Math.random()}`
+    `https://i.pravatar.cc/128?rnd=${Math.random()}`,
+    `https://i.pravatar.cc/128?rnd=${Math.random()}`,
+    `https://i.pravatar.cc/128?rnd=${Math.random()}`,
+    `https://i.pravatar.cc/128?rnd=${Math.random()}`,
+    `https://i.pravatar.cc/128?rnd=${Math.random()}`,
+    `https://i.pravatar.cc/128?rnd=${Math.random()}`,
   ],
   maxAdults: 40
 },
@@ -104,7 +114,12 @@ export const offers: Offers = [{
     'isPro': false
   },
   images: [
-    `https://i.pravatar.cc/128?rnd=${Math.random()}`
+    `https://i.pravatar.cc/128?rnd=${Math.random()}`,
+    `https://i.pravatar.cc/128?rnd=${Math.random()}`,
+    `https://i.pravatar.cc/128?rnd=${Math.random()}`,
+    `https://i.pravatar.cc/128?rnd=${Math.random()}`,
+    `https://i.pravatar.cc/128?rnd=${Math.random()}`,
+    `https://i.pravatar.cc/128?rnd=${Math.random()}`,
   ],
   maxAdults: 3
 },
@@ -140,7 +155,12 @@ export const offers: Offers = [{
     isPro: false
   },
   images: [
-    `https://i.pravatar.cc/128?rnd=${Math.random()}`
+    `https://i.pravatar.cc/128?rnd=${Math.random()}`,
+    `https://i.pravatar.cc/128?rnd=${Math.random()}`,
+    `https://i.pravatar.cc/128?rnd=${Math.random()}`,
+    `https://i.pravatar.cc/128?rnd=${Math.random()}`,
+    `https://i.pravatar.cc/128?rnd=${Math.random()}`,
+    `https://i.pravatar.cc/128?rnd=${Math.random()}`,
   ],
   maxAdults: 2
 },
