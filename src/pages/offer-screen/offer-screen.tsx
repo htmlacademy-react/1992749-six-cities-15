@@ -3,8 +3,9 @@ import { Offers } from '../../mocks/types';
 import { getNewStr, getRoundNumber } from '../../utils';
 //import { useParams } from 'react-router-dom';
 import PlaceCard from '../../components/place-card/place-card';
+import { CLASS_OFFER_SCREEN } from '../../const';
 
-const CLASS_OFFER_SCREEN = 'near-places__card place-card';
+
 const QUANTITY_OFFERS = 3;
 
 type OfferScreenProps = {
@@ -14,7 +15,7 @@ type OfferScreenProps = {
 export default function OfferScreen({offers}: OfferScreenProps): JSX.Element {
   //const {id} = useParams();
   const currentOffer = offers.filter((item) => item.id === '111ddfd5-b953-4a30-8c8d-bd083cd6b62a')[0];
-  const { bedrooms,images, isFavorite, price, rating, type, maxAdults, host } = currentOffer;
+  const { bedrooms,images, isFavorite, price, rating, type, maxAdults, host, goods, description } = currentOffer;
   const showCards = offers.slice(0, QUANTITY_OFFERS).map((item) =>
     <PlaceCard card={item} key={item.id} classCard={CLASS_OFFER_SCREEN}/>
   );
@@ -74,36 +75,13 @@ export default function OfferScreen({offers}: OfferScreenProps): JSX.Element {
             <div className="offer__inside">
               <h2 className="offer__inside-title">What&apos;s inside</h2>
               <ul className="offer__inside-list">
-                <li className="offer__inside-item">
-                    Wi-Fi
-                </li>
-                <li className="offer__inside-item">
-                    Washing machine
-                </li>
-                <li className="offer__inside-item">
-                    Towels
-                </li>
-                <li className="offer__inside-item">
-                    Heating
-                </li>
-                <li className="offer__inside-item">
-                    Coffee machine
-                </li>
-                <li className="offer__inside-item">
-                    Baby seat
-                </li>
-                <li className="offer__inside-item">
-                    Kitchen
-                </li>
-                <li className="offer__inside-item">
-                    Dishwasher
-                </li>
-                <li className="offer__inside-item">
-                    Cabel TV
-                </li>
-                <li className="offer__inside-item">
-                    Fridge
-                </li>
+                {goods.map((item) =>
+                  (
+                    <li className="offer__inside-item" key={item}>
+                      {item}
+                    </li>
+                  )
+                )}
               </ul>
             </div>
             <div className="offer__host">
@@ -121,10 +99,10 @@ export default function OfferScreen({offers}: OfferScreenProps): JSX.Element {
               </div>
               <div className="offer__description">
                 <p className="offer__text">
-                    A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam. The building is green and from 18th century.
+                  {description}
                 </p>
                 <p className="offer__text">
-                    An independent House, strategically located between Rembrand Square and National Opera, but where the bustle of the city comes to rest in this alley flowery and colorful.
+                  {description}
                 </p>
               </div>
             </div>

@@ -24,7 +24,17 @@ export const offers: Offers = [{
   description: 'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
   bedrooms: 1,
   goods: [
-    'Heating'
+    'Wi-Fi',
+    'Washing machine',
+    'Towels',
+    'Heating',
+    'Coffee machine',
+    'Baby seat',
+    'Heating',
+    'Dishwasher',
+    'Kitchen',
+    'Cabel TV',
+    'Fridge',
   ],
   host: {
     name: 'Oliver',
@@ -65,7 +75,16 @@ export const offers: Offers = [{
   description: 'Paris is the capital and largest city of France. Located in the north of the state.',
   bedrooms: 1,
   goods: [
-    'Heating'
+    'Washing machine',
+    'Towels',
+    'Heating',
+    'Coffee machine',
+    'Baby seat',
+    'Heating',
+    'Dishwasher',
+    'Kitchen',
+    'Cabel TV',
+    'Fridge',
   ],
   host: {
     name: 'Conner',
@@ -106,7 +125,15 @@ export const offers: Offers = [{
   description: 'Cologne is the fourth largest city in Germany, as well as one of the countrys most important religious and tourist centers.',
   bedrooms: 3,
   goods: [
-    'Heating'
+    'Towels',
+    'Heating',
+    'Coffee machine',
+    'Baby seat',
+    'Heating',
+    'Dishwasher',
+    'Kitchen',
+    'Cabel TV',
+    'Fridge',
   ],
   host: {
     'name': 'Angelina Conner',
@@ -147,7 +174,14 @@ export const offers: Offers = [{
   description: 'Brussels is the capital of Belgium, located in the center of Europe.',
   bedrooms: 3,
   goods: [
-    'Heating'
+    'Heating',
+    'Coffee machine',
+    'Baby seat',
+    'Heating',
+    'Dishwasher',
+    'Kitchen',
+    'Cabel TV',
+    'Fridge',
   ],
   host: {
     name: 'Oliver Angelina',

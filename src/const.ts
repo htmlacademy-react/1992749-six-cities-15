@@ -10,3 +10,6 @@ export enum AuthorizationStatus {
   NoAuth = 'NO_AUTH',
   Unknown = 'UNKNOWN',
 }
+
+export const CLASS_MAIN_SCREEN = 'cities__card place-card';
+export const CLASS_OFFER_SCREEN = 'near-places__card place-card';
