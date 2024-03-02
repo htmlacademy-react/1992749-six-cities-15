@@ -4,6 +4,7 @@ import { getNewStr, getRoundNumber } from '../../utils';
 //import { useParams } from 'react-router-dom';
 import PlaceCard from '../../components/place-card/place-card';
 import { CLASS_OFFER_SCREEN } from '../../const';
+import NotFoundScreen from '../not-found-screen/not-found-screen';
 
 
 const QUANTITY_OFFERS = 3;
@@ -14,7 +15,11 @@ type OfferScreenProps = {
 
 export default function OfferScreen({offers}: OfferScreenProps): JSX.Element {
   //const {id} = useParams();
-  const currentOffer = offers.filter((item) => item.id === '111ddfd5-b953-4a30-8c8d-bd083cd6b62a')[0];
+  const currentOffer = offers.find((offer) => offer.id === '111ddfd5-b953-4a30-8c8d-bd083cd6b62a');
+
+  if (!currentOffer) {
+    return <NotFoundScreen />;
+  }
   const { bedrooms,images, isFavorite, price, rating, type, maxAdults, host, goods, description } = currentOffer;
   const showCards = offers.slice(0, QUANTITY_OFFERS).map((item) =>
     <PlaceCard card={item} key={item.id} classCard={CLASS_OFFER_SCREEN}/>
