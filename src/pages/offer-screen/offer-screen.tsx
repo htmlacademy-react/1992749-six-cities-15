@@ -1,9 +1,9 @@
 import { JSX } from 'react';
 import { Offers } from '../../mocks/types';
 import { getNewStr, getRoundNumber } from '../../utils';
-//import { useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import PlaceCard from '../../components/place-card/place-card';
-import { CLASS_OFFER_SCREEN } from '../../const';
+import { ClassPlaceCard } from '../../const';
 import NotFoundScreen from '../not-found-screen/not-found-screen';
 import { reviews } from '../../mocks/reviews';
 import ReviewsForm from '../../components/reviews-form/reviews-form';
@@ -16,15 +16,15 @@ type OfferScreenProps = {
 }
 
 export default function OfferScreen({offers}: OfferScreenProps): JSX.Element {
-  //const {id} = useParams();
-  const currentOffer = offers.find((offer) => offer.id === '111ddfd5-b953-4a30-8c8d-bd083cd6b62a');
+  const {id} = useParams();
+  const currentOffer = offers.find((offer) => offer.id === id);
 
   if (!currentOffer) {
     return <NotFoundScreen />;
   }
   const { bedrooms,images, isFavorite, price, rating, type, maxAdults, host, goods, description } = currentOffer;
   const showCards = offers.slice(0, QUANTITY_OFFERS).map((item) =>
-    <PlaceCard card={item} key={item.id} classCard={CLASS_OFFER_SCREEN}/>
+    <PlaceCard card={item} key={item.id} classCard={ClassPlaceCard.ClassOfferScreen}/>
   );
 
   return (

@@ -1,7 +1,7 @@
 import { Offers } from './types';
 
 export const offers: Offers = [{
-  id: '111ddfd5-b953-4a30-8c8d-bd083cd6b62a',
+  id: '111',
   title: 'Beautiful & luxurious studio at great location',
   type: 'room',
   price: 120,
@@ -51,7 +51,7 @@ export const offers: Offers = [{
   maxAdults: 1
 },
 {
-  id: '222ddfd5-b953-4a30-8c8d-bd083cd6b62a',
+  id: '222',
   title: 'A calm place in a noisy city.',
   type: 'apartment',
   price: 220,

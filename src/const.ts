@@ -11,5 +11,7 @@ export enum AuthorizationStatus {
   Unknown = 'UNKNOWN',
 }
 
-export const CLASS_MAIN_SCREEN = 'cities__card place-card';
-export const CLASS_OFFER_SCREEN = 'near-places__card place-card';
+export enum ClassPlaceCard {
+  ClassMainScreen = 'cities__card place-card',
+  ClassOfferScreen = 'near-places__card place-card'
+}

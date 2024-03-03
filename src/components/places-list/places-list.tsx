@@ -1,4 +1,4 @@
-import { CLASS_MAIN_SCREEN } from '../../const';
+import { ClassPlaceCard } from '../../const';
 import { Offers } from '../../mocks/types';
 import PlaceCard from '../place-card/place-card';
 
@@ -9,7 +9,7 @@ type PlacesListProps = {
 
 export default function PlacesList({offers}: PlacesListProps): JSX.Element {
 
-  const showCards = offers.map((item) => <PlaceCard card={item} key={item.id} classCard={CLASS_MAIN_SCREEN}/>);
+  const showCards = offers.map((item) => <PlaceCard card={item} key={item.id} classCard={ClassPlaceCard.ClassMainScreen}/>);
 
   return (
 
