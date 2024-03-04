@@ -3,15 +3,23 @@ import { Offer } from '../../mocks/types';
 import { getNewStr, getRoundNumber } from '../../utils';
 
 type PlaceCardProps = {
-  card: Offer;
+  offer: Offer;
   classCard: string;
+  handleHover: (offer?: Offer) => void;
 }
 
-export default function PlaceCard({card, classCard}: PlaceCardProps): JSX.Element {
-  const {price, title, type, rating, images, isPremium, isFavorite} = card;
+export default function PlaceCard({offer, classCard, handleHover}: PlaceCardProps): JSX.Element {
+  const {price, title, type, rating, images, isPremium, isFavorite} = offer;
+
+  const handleMouseOn = () => {
+    handleHover(offer);
+  };
+  const handleMouseOff = () => {
+    handleHover();
+  };
 
   return (
-    <article className={classCard}>
+    <article className={classCard} onMouseEnter={handleMouseOn} onMouseLeave={handleMouseOff}>
       {!isPremium ? '' :
         <div className="place-card__mark">
           <span>Premium</span>

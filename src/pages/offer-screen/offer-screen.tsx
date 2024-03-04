@@ -24,7 +24,7 @@ export default function OfferScreen({offers}: OfferScreenProps): JSX.Element {
   }
   const { bedrooms,images, isFavorite, price, rating, type, maxAdults, host, goods, description } = currentOffer;
   const showCards = offers.slice(0, QUANTITY_OFFERS).map((item) =>
-    <PlaceCard card={item} key={item.id} classCard={ClassPlaceCard.ClassOfferScreen}/>
+    <PlaceCard offer={item} key={item.id} classCard={ClassPlaceCard.ClassOfferScreen}/>
   );
 
   return (

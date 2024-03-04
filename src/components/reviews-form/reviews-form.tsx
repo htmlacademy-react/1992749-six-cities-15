@@ -1,4 +1,4 @@
-import { JSX } from 'react';
+import { ChangeEvent, JSX, useState } from 'react';
 import { Reviews } from '../../mocks/types';
 
 
@@ -8,6 +8,10 @@ type ReviewsFormProps = {
 
 export default function ReviewsForm({reviews}: ReviewsFormProps): JSX.Element {
   const {user} = reviews[0];
+  const [comment, setComment] = useState('');
+  function handleCommentChange(evt: ChangeEvent<HTMLTextAreaElement>) {
+    setComment(evt.target.value);
+  }
 
   return (
     <section className="offer__reviews reviews">
@@ -74,7 +78,10 @@ export default function ReviewsForm({reviews}: ReviewsFormProps): JSX.Element {
             </svg>
           </label>
         </div>
-        <textarea className="reviews__textarea form__textarea" id="review" name="review" placeholder="Tell how was your stay, what you like and what can be improved"></textarea>
+        <textarea value={comment} onChange={handleCommentChange}
+          className="reviews__textarea form__textarea" id="review" name="review" placeholder="Tell how was your stay, what you like and what can be improved"
+        >
+        </textarea>
         <div className="reviews__button-wrapper">
           <p className="reviews__help">
                       To submit review please make sure to set <span className="reviews__star">rating</span> and describe your stay with at least <b className="reviews__text-amount">50 characters</b>.

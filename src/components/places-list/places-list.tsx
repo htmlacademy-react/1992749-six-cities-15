@@ -1,6 +1,8 @@
+import { useState } from 'react';
 import { ClassPlaceCard } from '../../const';
-import { Offers } from '../../mocks/types';
+import { Offer, Offers } from '../../mocks/types';
 import PlaceCard from '../place-card/place-card';
+import { Nullable } from 'vitest';
 
 
 type PlacesListProps = {
@@ -8,8 +10,15 @@ type PlacesListProps = {
 }
 
 export default function PlacesList({offers}: PlacesListProps): JSX.Element {
+  const [activeOffer, setActiveOffer] = useState<Nullable<Offer>>(null);
+  const handleHover = (offer?: Offer) => {
+    setActiveOffer(offer || null);
+  };
+  // useEffect(() => {
+  //   console.log(activeOffer);
+  // });
 
-  const showCards = offers.map((item) => <PlaceCard card={item} key={item.id} classCard={ClassPlaceCard.ClassMainScreen}/>);
+  const showCards = offers.map((item) => <PlaceCard handleHover={handleHover} offer={item} key={item.id} classCard={ClassPlaceCard.ClassMainScreen}/>);
 
   return (
 
