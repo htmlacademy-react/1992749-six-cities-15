@@ -1,21 +1,27 @@
 import { JSX } from 'react';
 import { Offer } from '../../mocks/types';
 import { getNewStr, getRoundNumber } from '../../utils';
+import { Link } from 'react-router-dom';
+import { AppRoute } from '../../const';
 
 type PlaceCardProps = {
   offer: Offer;
   classCard: string;
-  handleHover: (offer?: Offer) => void;
+  handleHover?: (offer?: Offer) => void;
 }
 
 export default function PlaceCard({offer, classCard, handleHover}: PlaceCardProps): JSX.Element {
-  const {price, title, type, rating, images, isPremium, isFavorite} = offer;
+  const {price, title, type, rating, images, isPremium, isFavorite, id} = offer;
 
   const handleMouseOn = () => {
-    handleHover(offer);
+    if (handleHover) {
+      handleHover(offer);
+    }
   };
   const handleMouseOff = () => {
-    handleHover();
+    if (handleHover) {
+      handleHover();
+    }
   };
 
   return (
@@ -26,9 +32,9 @@ export default function PlaceCard({offer, classCard, handleHover}: PlaceCardProp
         </div>}
 
       <div className="cities__image-wrapper place-card__image-wrapper">
-        <a href="#">
+        <Link to={`offer/${id}`}>
           <img className="place-card__image" src={images[0]} width="260" height="200" alt="Place image" />
-        </a>
+        </Link>
       </div>
       <div className="place-card__info">
         <div className="place-card__price-wrapper">
@@ -52,7 +58,7 @@ export default function PlaceCard({offer, classCard, handleHover}: PlaceCardProp
           </div>
         </div>
         <h2 className="place-card__name">
-          <a href="#">{title}</a>
+          <Link to={AppRoute.Root}>{title}</Link>
         </h2>
         <p className="place-card__type">{getNewStr(type)}</p>
       </div>

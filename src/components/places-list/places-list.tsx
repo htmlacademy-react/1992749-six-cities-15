@@ -49,7 +49,7 @@ export default function PlacesList({offers}: PlacesListProps): JSX.Element {
           </div>
         </section>
         <div className="cities__right-section">
-          <section className="cities__map map"></section>
+          <section className="cities__map map">{activeOffer?.id}</section>
         </div>
       </div>
     </div>

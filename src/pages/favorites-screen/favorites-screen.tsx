@@ -1,6 +1,8 @@
 import { JSX } from 'react';
 import { Offers } from '../../mocks/types';
 import { getNewStr, getRoundNumber } from '../../utils';
+import { Link } from 'react-router-dom';
+import { AppRoute } from '../../const';
 
 type FavoritesScreen = {
   offers: Offers;
@@ -18,9 +20,9 @@ export default function FavoritesScreen({offers}: FavoritesScreen): JSX.Element 
             <li className="favorites__locations-items">
               <div className="favorites__locations locations locations--current">
                 <div className="locations__item">
-                  <a className="locations__item-link" href="#">
+                  <Link className="locations__item-link" to={AppRoute.Root}>
                     <span>Amsterdam</span>
-                  </a>
+                  </Link>
                 </div>
               </div>
               <div className="favorites__places">
@@ -32,9 +34,9 @@ export default function FavoritesScreen({offers}: FavoritesScreen): JSX.Element 
                         <span>Premium</span>
                       </div>
                       <div className="favorites__image-wrapper place-card__image-wrapper">
-                        <a href="#">
+                        <Link to={`${AppRoute.Root}offer/${item.id}`}>
                           <img className="place-card__image" src={item.images[0]} width="150" height="110" alt="Place image" />
-                        </a>
+                        </Link>
                       </div>
                       <div className="favorites__card-info place-card__info">
                         <div className="place-card__price-wrapper">
