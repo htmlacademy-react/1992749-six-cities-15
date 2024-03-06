@@ -2,7 +2,7 @@ import { JSX } from 'react';
 import { Offer } from '../../mocks/types';
 import { getNewStr, getRoundNumber } from '../../utils';
 import { Link } from 'react-router-dom';
-import { AppRoute } from '../../const';
+
 
 type PlaceCardProps = {
   offer: Offer;
@@ -32,7 +32,7 @@ export default function PlaceCard({offer, classCard, handleHover}: PlaceCardProp
         </div>}
 
       <div className="cities__image-wrapper place-card__image-wrapper">
-        <Link to={`offer/${id}`}>
+        <Link to={`/offer/${id}`}>
           <img className="place-card__image" src={images[0]} width="260" height="200" alt="Place image" />
         </Link>
       </div>
@@ -58,7 +58,7 @@ export default function PlaceCard({offer, classCard, handleHover}: PlaceCardProp
           </div>
         </div>
         <h2 className="place-card__name">
-          <Link to={AppRoute.Root}>{title}</Link>
+          <Link to={`/offer/${id}`}>{title}</Link>.
         </h2>
         <p className="place-card__type">{getNewStr(type)}</p>
       </div>

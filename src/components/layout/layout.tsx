@@ -6,7 +6,7 @@ import { getAuthorizationStatus } from '../../authorizationStatus';
 
 export default function Layout(): JSX.Element {
   const {pathname} = useLocation();
-  const {rootClassName, linkClassName, shouldRenderUser, shouldRendeFooter} = getLayoutState(pathname as AppRoute);
+  const {rootClassName, linkClassName, shouldRenderUser, shouldRenderFooter} = getLayoutState(pathname as AppRoute);
   const authorizationStatus = getAuthorizationStatus();
 
   return (
@@ -50,7 +50,7 @@ export default function Layout(): JSX.Element {
         </div>
       </header>
       <Outlet />
-      {shouldRendeFooter ? (
+      {shouldRenderFooter ? (
         <footer className="footer container">
           <a className="footer__logo-link" href="main.html">
             <img className="footer__logo" src="img/logo.svg" alt="6 cities logo" width="64" height="33" />

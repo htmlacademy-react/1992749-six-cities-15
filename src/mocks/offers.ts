@@ -100,7 +100,7 @@ export const offers: Offers = [{
   maxAdults: 40
 },
 {
-  id: '333ddfd5-b953-4a30-8c8d-bd083cd6b62a',
+  id: '333',
   title: 'A combination of nature and the rich infrastructure of a modern city.',
   type: 'apartment',
   price: 320,
@@ -148,7 +148,7 @@ export const offers: Offers = [{
   maxAdults: 3
 },
 {
-  id: '444ddfd5-b953-4a30-8c8d-bd083cd6b62a',
+  id: '444',
   title: 'For those who love entertainment and an active lifestyle.',
   type: 'apartment',
   price: 420,
