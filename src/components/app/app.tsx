@@ -9,12 +9,13 @@ import NotFoundScreen from '../../pages/not-found-screen/not-found-screen';
 import PrivateRoute from '../private-route/private-route';
 import Layout from '../layout/layout';
 import { getAuthorizationStatus } from '../../authorizationStatus';
+import { Offers } from '../../types/types';
 
 type AppScreenProps = {
-  numberOfCards: number;
+  offers: Offers;
 }
 
-export default function App({numberOfCards}: AppScreenProps): JSX.Element {
+export default function App({offers}: AppScreenProps): JSX.Element {
   const authorizationStatus = getAuthorizationStatus();
 
   return (
@@ -23,7 +24,7 @@ export default function App({numberOfCards}: AppScreenProps): JSX.Element {
         <Route path={AppRoute.Root} element={<Layout />}>
           <Route
             index
-            element={<MainScreen numberOfCards={numberOfCards} />}
+            element={<MainScreen offers={offers} />}
           />
           <Route
             path={AppRoute.Login}
@@ -37,13 +38,13 @@ export default function App({numberOfCards}: AppScreenProps): JSX.Element {
             path={AppRoute.Favorites}
             element={(
               <PrivateRoute authorizationStatus={authorizationStatus}>
-                <FavoritesScreen />
+                <FavoritesScreen offers={offers} />
               </PrivateRoute>
             )}
           />
           <Route
             path={AppRoute.Offer}
-            element={<OfferScreen />}
+            element={<OfferScreen offers={offers}/>}
           />
           <Route
             path='*'

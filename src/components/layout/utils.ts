@@ -4,7 +4,7 @@ export const getLayoutState = (pathname: AppRoute) => {
   let rootClassName = '';
   let linkClassName = '';
   let shouldRenderUser = true;
-  let shouldRendeFooter = false;
+  let shouldRenderFooter = false;
 
   if (pathname === AppRoute.Root) {
     rootClassName = 'page--gray page--main';
@@ -13,8 +13,8 @@ export const getLayoutState = (pathname: AppRoute) => {
     rootClassName = 'page--gray page--login';
     shouldRenderUser = false;
   } else if (pathname === AppRoute.Favorites) {
-    shouldRendeFooter = true;
+    shouldRenderFooter = true;
   }
 
-  return {rootClassName, linkClassName, shouldRenderUser, shouldRendeFooter};
+  return {rootClassName, linkClassName, shouldRenderUser, shouldRenderFooter};
 };

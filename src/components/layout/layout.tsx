@@ -1,12 +1,12 @@
 import { JSX } from 'react';
-import { Outlet, useLocation } from 'react-router-dom';
+import { Link, Outlet, useLocation } from 'react-router-dom';
 import { AppRoute, AuthorizationStatus } from '../../const';
 import { getLayoutState } from './utils';
 import { getAuthorizationStatus } from '../../authorizationStatus';
 
 export default function Layout(): JSX.Element {
   const {pathname} = useLocation();
-  const {rootClassName, linkClassName, shouldRenderUser, shouldRendeFooter} = getLayoutState(pathname as AppRoute);
+  const {rootClassName, linkClassName, shouldRenderUser, shouldRenderFooter} = getLayoutState(pathname as AppRoute);
   const authorizationStatus = getAuthorizationStatus();
 
   return (
@@ -15,16 +15,16 @@ export default function Layout(): JSX.Element {
         <div className="container">
           <div className="header__wrapper">
             <div className="header__left">
-              <a className={`header__logo-link ${linkClassName}`}>
+              <Link to={AppRoute.Root} className={`header__logo-link ${linkClassName}`}>
                 <img className="header__logo" src="img/logo.svg" alt="6 cities logo" width="81" height="41" />
-              </a>
+              </Link>
             </div>
             {
               shouldRenderUser ? (
                 <nav className="header__nav">
                   <ul className="header__nav-list">
                     <li className="header__nav-item user">
-                      <a className="header__nav-link header__nav-link--profile" href="#">
+                      <Link className="header__nav-link header__nav-link--profile" to={AppRoute.Favorites}>
                         <div className="header__avatar-wrapper user__avatar-wrapper">
                         </div>
                         {authorizationStatus === AuthorizationStatus.Auth ? (
@@ -33,7 +33,7 @@ export default function Layout(): JSX.Element {
                             <span className="header__favorite-count">3</span>
                           </>
                         ) : <span className="header__login">Sign in</span>}
-                      </a>
+                      </Link>
                     </li>
                     {authorizationStatus === AuthorizationStatus.Auth ? (
                       <li className="header__nav-item">
@@ -50,7 +50,7 @@ export default function Layout(): JSX.Element {
         </div>
       </header>
       <Outlet />
-      {shouldRendeFooter ? (
+      {shouldRenderFooter ? (
         <footer className="footer container">
           <a className="footer__logo-link" href="main.html">
             <img className="footer__logo" src="img/logo.svg" alt="6 cities logo" width="64" height="33" />

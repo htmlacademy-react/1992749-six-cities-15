@@ -1,7 +1,3 @@
-export const Setting = {
-  numberOfCards: 5
-};
-
 export enum AppRoute {
   Login = '/login',
   Root = '/',
@@ -13,4 +9,9 @@ export enum AuthorizationStatus {
   Auth = 'AUTH',
   NoAuth = 'NO_AUTH',
   Unknown = 'UNKNOWN',
+}
+
+export enum ClassPlaceCard {
+  ClassMainScreen = 'cities__card place-card',
+  ClassOfferScreen = 'near-places__card place-card'
 }

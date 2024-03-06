@@ -1,4 +1,6 @@
 import { JSX } from 'react';
+import { Link } from 'react-router-dom';
+import { AppRoute } from '../../const';
 
 export default function NotFoundScreen(): JSX.Element {
   return (
@@ -9,7 +11,7 @@ export default function NotFoundScreen(): JSX.Element {
 
       <section >
         <h1>404. Page not found</h1>
-        <a href="/">Вернуться на главную</a>
+        <Link to={`${AppRoute.Root}`}>Вернуться на главную</Link>
       </section>
     </section>
   );
