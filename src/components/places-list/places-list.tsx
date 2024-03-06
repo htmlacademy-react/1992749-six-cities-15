@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { ClassPlaceCard } from '../../const';
-import { Offer, Offers } from '../../mocks/types';
+import { Offer, Offers } from '../../types/types';
 import PlaceCard from '../place-card/place-card';
 import { Nullable } from 'vitest';
 

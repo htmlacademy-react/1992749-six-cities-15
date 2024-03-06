@@ -1,5 +1,5 @@
 import { Fragment, JSX, ReactEventHandler, useState } from 'react';
-import { Reviews } from '../../mocks/types';
+import { Reviews } from '../../types/types';
 import { getAuthorizationStatus } from '../../authorizationStatus';
 import { AuthorizationStatus } from '../../const';
 

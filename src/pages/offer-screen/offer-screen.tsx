@@ -1,5 +1,5 @@
 import { JSX } from 'react';
-import { Offers } from '../../mocks/types';
+import { Offers } from '../../types/types';
 import { getNewStr, getRoundNumber } from '../../utils';
 import { useParams } from 'react-router-dom';
 import PlaceCard from '../../components/place-card/place-card';

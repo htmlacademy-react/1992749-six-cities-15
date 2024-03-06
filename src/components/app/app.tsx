@@ -9,7 +9,7 @@ import NotFoundScreen from '../../pages/not-found-screen/not-found-screen';
 import PrivateRoute from '../private-route/private-route';
 import Layout from '../layout/layout';
 import { getAuthorizationStatus } from '../../authorizationStatus';
-import { Offers } from '../../mocks/types';
+import { Offers } from '../../types/types';
 
 type AppScreenProps = {
   offers: Offers;

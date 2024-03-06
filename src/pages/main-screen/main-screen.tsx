@@ -1,5 +1,5 @@
 import { JSX } from 'react';
-import { Offers } from '../../mocks/types';
+import { Offers } from '../../types/types';
 import PlacesList from '../../components/places-list/places-list';
 
 

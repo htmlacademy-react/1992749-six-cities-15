@@ -1,7 +1,8 @@
 import { JSX } from 'react';
-import { Offer } from '../../mocks/types';
+import { Offer } from '../../types/types';
 import { getNewStr, getRoundNumber } from '../../utils';
 import { Link } from 'react-router-dom';
+import { AppRoute } from '../../const';
 
 
 type PlaceCardProps = {
@@ -26,10 +27,9 @@ export default function PlaceCard({offer, classCard, handleHover}: PlaceCardProp
 
   return (
     <article className={classCard} onMouseEnter={handleMouseOn} onMouseLeave={handleMouseOff}>
-      {!isPremium ? '' :
-        <div className="place-card__mark">
-          <span>Premium</span>
-        </div>}
+      {isPremium &&
+      <div className="place-card__mark"> <span>Premium</span>
+      </div>}
 
       <div className="cities__image-wrapper place-card__image-wrapper">
         <Link to={`/offer/${id}`}>
@@ -58,7 +58,7 @@ export default function PlaceCard({offer, classCard, handleHover}: PlaceCardProp
           </div>
         </div>
         <h2 className="place-card__name">
-          <Link to={`/offer/${id}`}>{title}</Link>.
+          <Link to={AppRoute.Root}>{title}</Link>.
         </h2>
         <p className="place-card__type">{getNewStr(type)}</p>
       </div>
