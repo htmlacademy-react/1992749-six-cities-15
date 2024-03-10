@@ -20,7 +20,7 @@ type Host = {
   name: string;
 }
 
-type City = {
+export type City = {
   location: {
     latitude: number;
     longitude: number;
@@ -54,3 +54,18 @@ export type Offer = {
 }
 
 export type Offers = Offer[];
+
+export type Point = {
+  id: string;
+  title: string;
+  type: string;
+  price: number;
+  previewImage: string;
+  city: City;
+  location: Location;
+  isFavorite: boolean;
+  isPremium: boolean;
+  rating: number;
+};
+
+export type Points = Point[];
