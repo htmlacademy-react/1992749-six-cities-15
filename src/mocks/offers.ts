@@ -8,14 +8,14 @@ export const offers: Offers = [{
   city: {
     name: 'Amsterdam',
     location: {
-      latitude: 52.35514938496378,
-      longitude: 4.673877537499948,
+      latitude: 52.37454,
+      longitude: 4.897976,
       zoom: 8
     }
   },
   location: {
-    latitude: 52.35514938496378,
-    longitude: 4.673877537499948,
+    latitude: 52.33537826414313,
+    longitude: 4.9049412599979885,
     zoom: 8
   },
   isFavorite: true,
@@ -58,14 +58,14 @@ export const offers: Offers = [{
   city: {
     name: 'Paris',
     location: {
-      latitude: 52.35514938496378,
-      longitude: 4.673877537499948,
+      latitude: 52.37454,
+      longitude: 4.897976,
       zoom: 8
     }
   },
   location: {
-    latitude: 52.35514938496378,
-    longitude: 4.673877537499948,
+    latitude: 52.34600980199269,
+    longitude: 4.939599963027033,
     zoom: 8
   },
   isFavorite: true,
@@ -99,54 +99,7 @@ export const offers: Offers = [{
   ],
   maxAdults: 40
 },
-{
-  id: '333',
-  title: 'A combination of nature and the rich infrastructure of a modern city.',
-  type: 'apartment',
-  price: 320,
-  city: {
-    name: 'Cologne',
-    location: {
-      latitude: 52.35514938496378,
-      longitude: 4.673877537499948,
-      zoom: 8
-    }
-  },
-  location: {
-    latitude: 52.35514938496378,
-    longitude: 4.673877537499948,
-    zoom: 8
-  },
-  isFavorite: false,
-  isPremium: false,
-  rating: 4.3,
-  description: 'Cologne is the fourth largest city in Germany, as well as one of the countrys most important religious and tourist centers.',
-  bedrooms: 3,
-  goods: [
-    'Towels',
-    'Heating',
-    'Coffee machine',
-    'Baby seat',
-    'Dishwasher',
-    'Kitchen',
-    'Cabel TV',
-    'Fridge',
-  ],
-  host: {
-    'name': 'Angelina Conner',
-    'avatarUrl': `https://i.pravatar.cc/128?rnd=${Math.random()}`,
-    'isPro': false
-  },
-  images: [
-    `https://i.pravatar.cc/128?rnd=${Math.random()}`,
-    `https://i.pravatar.cc/128?rnd=${Math.random()}`,
-    `https://i.pravatar.cc/128?rnd=${Math.random()}`,
-    `https://i.pravatar.cc/128?rnd=${Math.random()}`,
-    `https://i.pravatar.cc/128?rnd=${Math.random()}`,
-    `https://i.pravatar.cc/128?rnd=${Math.random()}`,
-  ],
-  maxAdults: 3
-},
+
 {
   id: '444',
   title: 'For those who love entertainment and an active lifestyle.',
@@ -155,8 +108,8 @@ export const offers: Offers = [{
   city: {
     name: 'Brussels',
     location: {
-      latitude: 52.35514938496378,
-      longitude: 4.673877537499948,
+      latitude: 52.37454,
+      longitude: 4.897976,
       zoom: 8
     }
   },

@@ -16,9 +16,6 @@ export default function PlacesList({offers}: PlacesListProps): JSX.Element {
   const handleHover = (offer?: Offer) => {
     setActiveOffer(offer || null);
   };
-  // useEffect(() => {
-  //   console.log(activeOffer);
-  // });
 
   const showCards = offers.map((item) => <PlaceCard handleHover={handleHover} offer={item} key={item.id} classCard={ClassPlaceCard.ClassMainScreen}/>);
 
@@ -51,7 +48,7 @@ export default function PlacesList({offers}: PlacesListProps): JSX.Element {
           </div>
         </section>
         <div className="cities__right-section">
-          <Map city={CITY} offers={offers} activeOfferId={activeOffer}/>
+          <Map city={CITY} offers={offers} activeOffer={activeOffer}/>
         </div>
       </div>
     </div>
