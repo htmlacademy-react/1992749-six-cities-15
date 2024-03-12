@@ -2,6 +2,8 @@ import { useState } from 'react';
 import { ClassPlaceCard } from '../../const';
 import { Offer, Offers } from '../../types/types';
 import PlaceCard from '../place-card/place-card';
+import Map from '../map/map';
+import { CITY } from '../../mocks/city';
 import { Nullable } from 'vitest';
 
 
@@ -49,7 +51,7 @@ export default function PlacesList({offers}: PlacesListProps): JSX.Element {
           </div>
         </section>
         <div className="cities__right-section">
-          <section className="cities__map map">{activeOffer?.id}</section>
+          <Map city={CITY} offers={offers} activeOfferId={activeOffer}/>
         </div>
       </div>
     </div>
