@@ -7,6 +7,7 @@ import {URL_MARKER_DEFAULT, URL_MARKER_CURRENT} from '../../const';
 
 
 type MapProps = {
+  className?: string;
   city: City;
   offers: Offer[];
   activeOffer?: Offer | null;
@@ -24,7 +25,7 @@ const activeMarcerIcon = leaflet.icon({
   iconAnchor: [20, 40]
 });
 
-export default function Map({city, offers, activeOffer}: MapProps): JSX.Element {
+export default function Map({className, city, offers, activeOffer}: MapProps): JSX.Element {
 
   const mapContainerRef = useRef<HTMLDivElement>(null);
   const map = useMap({location: city.location, containerRef: mapContainerRef});
@@ -43,6 +44,6 @@ export default function Map({city, offers, activeOffer}: MapProps): JSX.Element 
     }
   }, [activeOffer, map, offers]);
 
-  return <section className="cities__map map" ref={mapContainerRef} />;
+  return <section className={`${className} map`} ref={mapContainerRef} />;
 
 }

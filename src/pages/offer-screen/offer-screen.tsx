@@ -6,6 +6,7 @@ import NotFoundScreen from '../not-found-screen/not-found-screen';
 import { reviews } from '../../mocks/reviews';
 import ReviewsForm from '../../components/reviews-form/reviews-form';
 import PlacesNear from '../../components/places-near/places-near';
+import Map from '../../components/map/map';
 
 type OfferScreenProps = {
   offers: Offers;
@@ -111,7 +112,7 @@ export default function OfferScreen({offers}: OfferScreenProps): JSX.Element {
 
           </div>
         </div>
-        <section className="offer__map map"></section>
+        <Map className='offer__map' city={offers[0].city} offers={offers}/>
       </section>
       <div className="container">
 
