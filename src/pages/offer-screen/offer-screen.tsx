@@ -2,14 +2,10 @@ import { JSX } from 'react';
 import { Offers } from '../../types/types';
 import { getNewStr, getRoundNumber } from '../../utils';
 import { useParams } from 'react-router-dom';
-import PlaceCard from '../../components/place-card/place-card';
-import { ClassPlaceCard } from '../../const';
 import NotFoundScreen from '../not-found-screen/not-found-screen';
 import { reviews } from '../../mocks/reviews';
 import ReviewsForm from '../../components/reviews-form/reviews-form';
-
-
-const QUANTITY_OFFERS = 3;
+import PlacesNear from '../../components/places-near/places-near';
 
 type OfferScreenProps = {
   offers: Offers;
@@ -23,9 +19,6 @@ export default function OfferScreen({offers}: OfferScreenProps): JSX.Element {
     return <NotFoundScreen />;
   }
   const { bedrooms,images, isFavorite, price, rating, type, maxAdults, host, goods, description } = currentOffer;
-  const showCards = offers.slice(0, QUANTITY_OFFERS).map((item) =>
-    <PlaceCard offer={item} key={item.id} classCard={ClassPlaceCard.ClassOfferScreen}/>
-  );
 
   return (
     <main className="page__main page__main--offer">
@@ -121,12 +114,9 @@ export default function OfferScreen({offers}: OfferScreenProps): JSX.Element {
         <section className="offer__map map"></section>
       </section>
       <div className="container">
-        <section className="near-places places">
-          <h2 className="near-places__title">Other places in the neighbourhood</h2>
-          <div className="near-places__list places__list">
-            {showCards}
-          </div>
-        </section>
+
+        <PlacesNear offers={offers} />
+
       </div>
     </main>
 
