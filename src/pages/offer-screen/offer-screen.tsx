@@ -112,7 +112,7 @@ export default function OfferScreen({offers}: OfferScreenProps): JSX.Element {
 
           </div>
         </div>
-        <Map className='offer__map' city={offers[0].city} offers={offers}/>
+        <Map className='offer__map' city={offers[0].city} offers={offers} activeOffer={currentOffer}/>
       </section>
       <div className="container">
 
@@ -123,4 +123,3 @@ export default function OfferScreen({offers}: OfferScreenProps): JSX.Element {
 
   );
 }
-
