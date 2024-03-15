@@ -1,9 +1,7 @@
 import { useState } from 'react';
-import { ClassPlaceCard } from '../../const';
 import { Offer, Offers } from '../../types/types';
 import PlaceCard from '../place-card/place-card';
 import Map from '../map/map';
-import { CITY } from '../../mocks/city';
 import { Nullable } from 'vitest';
 
 
@@ -17,7 +15,7 @@ export default function PlacesList({offers}: PlacesListProps): JSX.Element {
     setActiveOffer(offer || null);
   };
 
-  const showCards = offers.map((item) => <PlaceCard handleHover={handleHover} offer={item} key={item.id} classCard={ClassPlaceCard.ClassMainScreen}/>);
+  const showCards = offers.map((item) => <PlaceCard handleHover={handleHover} offer={item} key={item.id} classCard={'cities__card place-card'}/>);
 
   return (
 
@@ -48,7 +46,7 @@ export default function PlacesList({offers}: PlacesListProps): JSX.Element {
           </div>
         </section>
         <div className="cities__right-section">
-          <Map city={CITY} offers={offers} activeOffer={activeOffer}/>
+          <Map className='cities__map' city={offers[0].city} offers={offers} activeOffer={activeOffer}/>
         </div>
       </div>
     </div>

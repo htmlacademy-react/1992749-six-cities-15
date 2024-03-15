@@ -10,7 +10,7 @@ export const reviews: Reviews = [
       isPro: false
     },
     comment: 'A quiet cozy and picturesque that hides behind a a river by the unique lightness of Amsterdam.',
-    rating: 4
+    rating: 2
   },
   {
     id: '666ddfd5-b953-4a30-8c8d-bd083cd6b62a',
@@ -21,7 +21,7 @@ export const reviews: Reviews = [
       isPro: false
     },
     comment: 'The climate is temperate, transitional from temperate continental to temperate maritime.',
-    rating: 4
+    rating: 3
   },
   {
     id: '777ddfd5-b953-4a30-8c8d-bd083cd6b62a',
@@ -32,7 +32,7 @@ export const reviews: Reviews = [
       isPro: false
     },
     comment: 'This type of climate is explained by the geographical location and atmospheric circulation characteristic of the Leningrad region.',
-    rating: 4
+    rating: 5
   },
   {
     id: '888ddfd5-b953-4a30-8c8d-bd083cd6b62a',
@@ -43,6 +43,6 @@ export const reviews: Reviews = [
       isPro: false
     },
     comment: 'According to the Köppen climate classification, it is classified as humid continental.',
-    rating: 4
+    rating: 3
   }
 ];

@@ -7,7 +7,7 @@ import { AppRoute } from '../../const';
 
 type PlaceCardProps = {
   offer: Offer;
-  classCard: string;
+  classCard?: string;
   handleHover?: (offer?: Offer) => void;
 }
 

@@ -4,7 +4,7 @@ type User = {
   isPro: boolean;
 }
 
-type Review = {
+export type Review = {
   id: string;
   date: string;
   user: User;
@@ -21,15 +21,11 @@ type Host = {
 }
 
 export type City = {
-  location: {
-    latitude: number;
-    longitude: number;
-    zoom: number;
-  };
+  location: Location;
   name: string;
 }
 
-type Location = {
+export type Location = {
   latitude: number;
   longitude: number;
   zoom: number;
