@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { ClassPlaceCard } from '../../const';
 import { Offer, Offers } from '../../types/types';
 import PlaceCard from '../place-card/place-card';
 import Map from '../map/map';
@@ -16,7 +15,7 @@ export default function PlacesList({offers}: PlacesListProps): JSX.Element {
     setActiveOffer(offer || null);
   };
 
-  const showCards = offers.map((item) => <PlaceCard handleHover={handleHover} offer={item} key={item.id} classCard={ClassPlaceCard.ClassMainScreen}/>);
+  const showCards = offers.map((item) => <PlaceCard handleHover={handleHover} offer={item} key={item.id} classCard={'cities__card place-card'}/>);
 
   return (
 

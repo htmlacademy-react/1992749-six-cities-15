@@ -1,4 +1,3 @@
-import { ClassPlaceCard } from '../../const';
 import { Offers } from '../../types/types';
 import PlaceCard from '../place-card/place-card';
 
@@ -11,7 +10,7 @@ type PlacesNearProps = {
 export default function PlacesNear({offers}: PlacesNearProps): JSX.Element {
 
   const showCards = offers.slice(0, QUANTITY_OFFERS).map((item) =>
-    <PlaceCard offer={item} key={item.id} classCard={ClassPlaceCard.ClassOfferScreen}/>
+    <PlaceCard offer={item} key={item.id} classCard={'near-places__card place-card'}/>
   );
 
   return (
