@@ -551,7 +551,7 @@ export const offers: Offers = [
       'longitude': 4.9099759999999995,
       'zoom': 16
     },
-    'isFavorite': false,
+    'isFavorite': true,
     'isPremium': false,
     'rating': 2.4,
     description: 'Brussels is the capital of Belgium, located in the center of Europe.',
