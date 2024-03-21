@@ -1,3 +1,5 @@
+import { CITIES } from '../const';
+
 type User = {
   name: string;
   avatarUrl: string;
@@ -32,22 +34,29 @@ export type Location = {
 }
 
 export type Offer = {
-  bedrooms: number;
-  city: City;
-  description: string;
-  goods: string[];
-  host: Host;
   id: string;
-  images: string[];
-  isFavorite: boolean;
-  isPremium: boolean;
-  location: Location;
-  maxAdults: number;
-  price: number;
-  rating: number;
   title: string;
   type: string;
+  price: number;
+  previewImage: string;
+  city: City;
+  location: Location;
+  isFavorite: boolean;
+  isPremium: boolean;
+  rating: number;
+  description: string;
+  bedrooms: number;
+  goods: string[];
+  host: Host;
+  images: string[];
+  maxAdults: number;
 }
 
 export type Offers = Offer[];
 
+export type CityName = (typeof CITIES)[number]['name'];
+
+export type OffersState = {
+  city: CityName;
+  offers: Offer[];
+}
