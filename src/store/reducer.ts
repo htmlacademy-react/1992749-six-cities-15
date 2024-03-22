@@ -9,7 +9,7 @@ interface OffersState {
 }
 
 const initialState: OffersState = {
-  city: CITIES[0].name,
+  city: CITIES[0],
   offers,
 };
 

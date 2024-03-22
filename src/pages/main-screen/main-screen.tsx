@@ -1,13 +1,8 @@
 import { JSX } from 'react';
-import { Offers } from '../../types/types';
 import PlacesList from '../../components/places-list/places-list';
 
 
-type MainScreenProps = {
-  offers: Offers;
-}
-
-export default function MainScreen({offers}: MainScreenProps): JSX.Element {
+export default function MainScreen(): JSX.Element {
 
   return (
     <main className="page__main page__main--index">
@@ -49,7 +44,7 @@ export default function MainScreen({offers}: MainScreenProps): JSX.Element {
         </section>
       </div>
 
-      <PlacesList offers={offers} />
+      <PlacesList />
 
     </main>
   );

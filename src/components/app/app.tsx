@@ -24,7 +24,7 @@ export default function App({offers}: AppScreenProps): JSX.Element {
         <Route path={AppRoute.Root} element={<Layout />}>
           <Route
             index
-            element={<MainScreen offers={offers} />}
+            element={<MainScreen />}
           />
           <Route
             path={AppRoute.Login}
