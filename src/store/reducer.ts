@@ -1,12 +1,7 @@
 import { CITIES } from '../const';
 import { offers } from '../mocks/offers';
-import { CityName, Offer } from '../types/types';
+import { CityName, OffersState } from '../types/types';
 
-
-interface OffersState {
-  city: CityName;
-  offers: Offer[];
-}
 
 const initialState: OffersState = {
   city: CITIES[0],

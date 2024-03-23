@@ -29,6 +29,7 @@ export default function Map({className, city, offers, activeOffer}: MapProps): J
 
   const mapContainerRef = useRef<HTMLDivElement>(null);
   const map = useMap({location: city.location, containerRef: mapContainerRef});
+
   // const markerLayer = useRef<LayerGroup>(leaflet.layerGroup());// для переключения городов
 
   // useEffect(() => {// для переключения городов

@@ -1,14 +1,17 @@
 import { useState } from 'react';
-import { Offer } from '../../types/types';
+import { CityName, Offer, Offers } from '../../types/types';
 import PlaceCard from '../place-card/place-card';
 import Map from '../map/map';
 import { Nullable } from 'vitest';
-import { useAppSelector } from '../hooks/use-store';
 
 
-export default function PlacesList(): JSX.Element {
-  const offers = useAppSelector((state) => state.offers);
-  const currentCity = useAppSelector((state) => state.city);
+type PlacesListProps = {
+  offers: Offers;
+  currentCity: CityName;
+}
+
+export default function PlacesList({offers, currentCity}: PlacesListProps): JSX.Element {
+
   const [activeOffer, setActiveOffer] = useState<Nullable<Offer>>(null);
   const handleHover = (offer?: Offer) => {
     setActiveOffer(offer || null);

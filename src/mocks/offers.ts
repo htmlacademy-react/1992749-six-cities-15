@@ -484,7 +484,7 @@ export const offers: Offers = [
     ],
     maxAdults: 1
   },
-  {
+  /*{
     'id': 'd838728c-5407-4b15-8cc1-cea4e6551594',
     'title': 'Wood and stone place',
     'type': 'room',
@@ -821,8 +821,8 @@ export const offers: Offers = [
       `https://i.pravatar.cc/128?rnd=${Math.random()}`,
     ],
     maxAdults: 40
-  },
-  {
+  },*/
+  /*{
     id: '444',
     title: 'For those who love entertainment and an active lifestyle.',
     type: 'apartment',
@@ -869,7 +869,7 @@ export const offers: Offers = [
       `https://i.pravatar.cc/128?rnd=${Math.random()}`,
     ],
     maxAdults: 2
-  },
+  },*/
   {
     'id': '559aab78-2b7a-4bd0-b232-c974e51a6faf',
     'title': 'Nice, cozy, warm big bed apartment',
@@ -4374,7 +4374,7 @@ export const offers: Offers = [
     ],
     maxAdults: 2
   },
-  {
+  /*{
     'id': '8d5fa222-31ee-403d-b9f6-4ce501487c4e',
     'title': 'Amazing and Extremely Central Flat',
     'type': 'hotel',
@@ -4421,7 +4421,7 @@ export const offers: Offers = [
       `https://i.pravatar.cc/128?rnd=${Math.random()}`,
     ],
     maxAdults: 2
-  },
+  },*/
   {
     'id': '43e23860-5fd0-44d4-a965-7270a8d313d2',
     'title': 'Amazing and Extremely Central Flat',
