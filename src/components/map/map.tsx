@@ -30,15 +30,12 @@ export default function Map({className, city, offers, activeOffer}: MapProps): J
   const mapContainerRef = useRef<HTMLDivElement>(null);
   const map = useMap({location: city.location, containerRef: mapContainerRef});
 
-  // const markerLayer = useRef<LayerGroup>(leaflet.layerGroup());// для переключения городов
+  useEffect(() => {
+    if (map) {
+      map.setView([city.location.latitude, city.location.longitude], city.location.zoom);
 
-  // useEffect(() => {// для переключения городов
-  //   if (map) {
-  //     map.setView([city.location.latitude, city.location.longitude], city.location.zoom);
-  //     markerLayer.current.addTo(map);
-  //     markerLayer.current.clearLayers();
-  //   }
-  // }, [city, map]);
+    }
+  }, [city, map]);
 
   useEffect(() => {
     if (map) {
@@ -51,7 +48,7 @@ export default function Map({className, city, offers, activeOffer}: MapProps): J
         }, {
           icon: offer === activeOffer ? activeMarcerIcon : defaultMarkerIcon,
         })
-          .addTo(markerLayer); //addTo(markerLayer.current) для переключения городов
+          .addTo(markerLayer);
       });
       return () => {
         map.removeLayer(markerLayer);

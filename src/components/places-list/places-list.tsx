@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { CityName, Offer, Offers } from '../../types/types';
+import { Offer, Offers } from '../../types/types';
 import PlaceCard from '../place-card/place-card';
 import Map from '../map/map';
 import { Nullable } from 'vitest';
@@ -7,10 +7,9 @@ import { Nullable } from 'vitest';
 
 type PlacesListProps = {
   offers: Offers;
-  currentCity: CityName;
 }
 
-export default function PlacesList({offers, currentCity}: PlacesListProps): JSX.Element {
+export default function PlacesList({offers}: PlacesListProps): JSX.Element {
 
   const [activeOffer, setActiveOffer] = useState<Nullable<Offer>>(null);
   const handleHover = (offer?: Offer) => {
@@ -48,7 +47,7 @@ export default function PlacesList({offers, currentCity}: PlacesListProps): JSX.
           </div>
         </section>
         <div className="cities__right-section">
-          <Map className='cities__map' city={currentCity} offers={offers} activeOffer={activeOffer}/>
+          <Map className='cities__map' city={offers[0].city} offers={offers} activeOffer={activeOffer}/>
         </div>
       </div>
     </div>

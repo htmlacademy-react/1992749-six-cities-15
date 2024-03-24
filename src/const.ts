@@ -77,3 +77,13 @@ export const CITIES = [
   },
 ] as const;
 
+/*
+export const CITIES: string[] = [
+  'Paris',
+  'Cologne',
+  'Brussels',
+  'Amsterdam',
+  'Hamburg',
+  'Dusseldorf',
+];
+*/
