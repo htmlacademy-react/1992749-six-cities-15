@@ -1,4 +1,3 @@
-import { CITIES } from '../const';
 
 type User = {
   name: string;
@@ -54,9 +53,7 @@ export type Offer = {
 
 export type Offers = Offer[];
 
-export type CityName = (typeof CITIES)[number];
-
 export type OffersState = {
-  city: CityName;
+  city: string;
   offers: Offer[];
 }
