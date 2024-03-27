@@ -78,7 +78,7 @@ export const CITIES = [
 ] as const;
 */
 
-export const CITIES: string[] = [
+export const CITIES = [
   'Paris',
   'Cologne',
   'Brussels',

@@ -53,7 +53,10 @@ export type Offer = {
 
 export type Offers = Offer[];
 
+//export type CityName = ['Paris' |'Cologne' | 'Brussels' | 'Amsterdam' | 'Hamburg'| 'Dusseldorf'];
+
 export type OffersState = {
   city: string;
   offers: Offer[];
+  filteredOffers: Offer[];
 }

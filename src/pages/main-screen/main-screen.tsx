@@ -1,16 +1,18 @@
-import { JSX } from 'react';
+import { JSX, useEffect } from 'react';
 import PlacesList from '../../components/places-list/places-list';
 import { useAppDispatch, useAppSelector } from '../../components/hooks/use-store';
 import { CITIES } from '../../const';
 import { setCity } from '../../store/reducer';
 
-
 export default function MainScreen(): JSX.Element {
-  const offers = useAppSelector((state) => state.offers);
+
   const currentCity = useAppSelector((state) => state.city);
-  const currentOffers = offers.filter((offer) => offer.city.name === currentCity);
+  const currentOffers = useAppSelector((state) => state.filteredOffers);
   const dispatch = useAppDispatch();
 
+  useEffect(() => {
+    dispatch(setCity(CITIES[0]));
+  }, [dispatch]);
 
   return (
     <main className="page__main page__main--index">
