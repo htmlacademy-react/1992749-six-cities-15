@@ -3,12 +3,13 @@ import PlacesList from '../../components/places-list/places-list';
 import { useAppDispatch, useAppSelector } from '../../components/hooks/use-store';
 import { CITIES } from '../../const';
 import { setCity } from '../../store/slices/offers-slice';
-//import { setCity } from '../../store/reducer';
+import { selectCity, selectFilteredOffers } from '../../store/selectors/selectors';
+
 
 export default function MainScreen(): JSX.Element {
 
-  const currentCity = useAppSelector((state) => state.city);
-  const currentOffers = useAppSelector((state) => state.filteredOffers);
+  const currentCity = useAppSelector(selectCity);
+  const currentOffers = useAppSelector(selectFilteredOffers);
   const dispatch = useAppDispatch();
 
   useEffect(() => {
