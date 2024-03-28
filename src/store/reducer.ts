@@ -1,3 +1,5 @@
+/*
+
 import { CITIES } from '../const';
 import { offers } from '../mocks/offers';
 import { OffersState } from '../types/types';
@@ -30,4 +32,4 @@ export function reducer(state: OffersState = initialState, action: {payload: str
     default: return state;
   }
 }
-
+*/

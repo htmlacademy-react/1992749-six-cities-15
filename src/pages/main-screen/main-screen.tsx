@@ -2,7 +2,8 @@ import { JSX, useEffect } from 'react';
 import PlacesList from '../../components/places-list/places-list';
 import { useAppDispatch, useAppSelector } from '../../components/hooks/use-store';
 import { CITIES } from '../../const';
-import { setCity } from '../../store/reducer';
+import { setCity } from '../../store/slices/offers-slice';
+//import { setCity } from '../../store/reducer';
 
 export default function MainScreen(): JSX.Element {
 
