@@ -10,6 +10,7 @@ type PlacesListProps = {
 }
 
 export default function PlacesList({offers}: PlacesListProps): JSX.Element {
+
   const [activeOffer, setActiveOffer] = useState<Nullable<Offer>>(null);
   const handleHover = (offer?: Offer) => {
     setActiveOffer(offer || null);

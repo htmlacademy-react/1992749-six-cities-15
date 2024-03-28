@@ -1,6 +1,6 @@
 import { JSX } from 'react';
 import { Offers } from '../../types/types';
-import { getNewStr, getRoundNumber } from '../../utils';
+import { getNearOffers, getNewStr, getRoundNumber } from '../../utils';
 import { useParams } from 'react-router-dom';
 import NotFoundScreen from '../not-found-screen/not-found-screen';
 import { reviews } from '../../mocks/reviews';
@@ -20,6 +20,9 @@ export default function OfferScreen({offers}: OfferScreenProps): JSX.Element {
     return <NotFoundScreen />;
   }
   const { bedrooms,images, isFavorite, price, rating, type, maxAdults, host, goods, description } = currentOffer;
+
+  const nearOffers = getNearOffers(currentOffer);
+  const nearOffersPlusCurrentOffer = [currentOffer, ...nearOffers];
 
   return (
     <main className="page__main page__main--offer">
@@ -112,11 +115,11 @@ export default function OfferScreen({offers}: OfferScreenProps): JSX.Element {
 
           </div>
         </div>
-        <Map className='offer__map' city={offers[0].city} offers={offers} activeOffer={currentOffer}/>
+        <Map className='offer__map' city={offers[0].city} offers={nearOffersPlusCurrentOffer} activeOffer={currentOffer}/>
       </section>
       <div className="container">
 
-        <PlacesNear offers={offers} />
+        <PlacesNear offers={nearOffers} />
 
       </div>
     </main>

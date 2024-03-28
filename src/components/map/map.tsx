@@ -1,4 +1,4 @@
-import leaflet from 'leaflet';
+import leaflet, { layerGroup } from 'leaflet';
 import {City, Offer} from '../../types/types';
 import { useMap } from '../hooks/use-map';
 import 'leaflet/dist/leaflet.css';
@@ -30,8 +30,17 @@ export default function Map({className, city, offers, activeOffer}: MapProps): J
   const mapContainerRef = useRef<HTMLDivElement>(null);
   const map = useMap({location: city.location, containerRef: mapContainerRef});
 
-  useEffect((): void => {
+  useEffect(() => {
     if (map) {
+      map.setView([city.location.latitude, city.location.longitude], city.location.zoom);
+
+    }
+  }, [city, map]);
+
+  useEffect(() => {
+    if (map) {
+      const markerLayer = layerGroup().addTo(map);
+
       offers.forEach((offer): void => {
         leaflet.marker({
           lat: offer.location.latitude,
@@ -39,8 +48,11 @@ export default function Map({className, city, offers, activeOffer}: MapProps): J
         }, {
           icon: offer === activeOffer ? activeMarcerIcon : defaultMarkerIcon,
         })
-          .addTo(map);
+          .addTo(markerLayer);
       });
+      return () => {
+        map.removeLayer(markerLayer);
+      };
     }
   }, [activeOffer, map, offers]);
 

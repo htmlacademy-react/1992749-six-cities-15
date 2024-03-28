@@ -1,14 +1,12 @@
 import { JSX } from 'react';
-import { Offers } from '../../types/types';
 import { getNewStr, getRoundNumber } from '../../utils';
 import { Link } from 'react-router-dom';
 import { AppRoute } from '../../const';
+import { useAppSelector } from '../../components/hooks/use-store';
 
-type FavoritesScreen = {
-  offers: Offers;
-}
 
-export default function FavoritesScreen({offers}: FavoritesScreen): JSX.Element {
+export default function FavoritesScreen(): JSX.Element {
+  const offers = useAppSelector((state) => state.offers);
   const findFavorites = offers.filter((item) => item.isFavorite);
 
   return (
