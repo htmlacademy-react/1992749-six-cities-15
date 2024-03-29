@@ -18,7 +18,13 @@ export const offersSlice = createSlice({
       state.filteredOffers = state.offers.filter((offer) => offer.city.name === action.payload);
     },
   },
+  selectors: {
+    city: (state) => state.city,
+    filteredOffers: (state) => state.filteredOffers,
+  }
 });
 
 // export const offersActions = offersSlice.actions;
 export const {setCity} = offersSlice.actions;
+export const offersSelectors = offersSlice.selectors;
+
