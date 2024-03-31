@@ -6,7 +6,7 @@ import { useAppSelector } from '../../components/hooks/use-store';
 
 
 export default function FavoritesScreen(): JSX.Element {
-  const offers = useAppSelector((state) => state.offers);
+  const offers = useAppSelector((state) => state.offers).filteredOffers;
   const findFavorites = offers.filter((item) => item.isFavorite);
 
   return (

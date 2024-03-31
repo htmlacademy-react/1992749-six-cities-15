@@ -3,7 +3,8 @@ import { Offer, Offers } from '../../types/types';
 import PlaceCard from '../place-card/place-card';
 import Map from '../map/map';
 import { Nullable } from 'vitest';
-
+import { SortOptions } from '../../const';
+import { Sort } from '../sort/sort';
 
 type PlacesListProps = {
   offers: Offers;
@@ -16,7 +17,20 @@ export default function PlacesList({offers}: PlacesListProps): JSX.Element {
     setActiveOffer(offer || null);
   };
 
-  const showCards = offers.map((item) => <PlaceCard handleHover={handleHover} offer={item} key={item.id} classCard={'cities__card place-card'}/>);
+  const [activeSort, setActiveSort] = useState(SortOptions.Popular);
+  let sortedOffers = offers;
+
+  if(activeSort === SortOptions.PriceLowToHigh) {
+    sortedOffers = offers.toSorted((a, b) => a.price - b.price);
+  }
+  if (activeSort === SortOptions.PriceHighToLow) {
+    sortedOffers = offers.toSorted((a, b) => b.price - a.price);
+  }
+  if (activeSort === SortOptions.TopRatedFirst) {
+    sortedOffers = offers.toSorted((a, b) => b.rating - a.rating);
+  }
+
+  const showCards = sortedOffers.map((item) => <PlaceCard handleHover={handleHover} offer={item} key={item.id} classCard={'cities__card place-card'}/>);
 
   return (
 
@@ -24,22 +38,10 @@ export default function PlacesList({offers}: PlacesListProps): JSX.Element {
       <div className="cities__places-container container">
         <section className="cities__places places">
           <h2 className="visually-hidden">Places</h2>
-          <b className="places__found">312 places to stay in Amsterdam</b>
-          <form className="places__sorting" action="#" method="get">
-            <span className="places__sorting-caption">Sort by</span>
-            <span className="places__sorting-type" tabIndex={0}>
-                Popular
-              <svg className="places__sorting-arrow" width="7" height="4">
-                <use xlinkHref="#icon-arrow-select"></use>
-              </svg>
-            </span>
-            <ul className="places__options places__options--custom places__options--opened">
-              <li className="places__option places__option--active" tabIndex={0}>Popular</li>
-              <li className="places__option" tabIndex={0}>Price: low to high</li>
-              <li className="places__option" tabIndex={0}>Price: high to low</li>
-              <li className="places__option" tabIndex={0}>Top rated first</li>
-            </ul>
-          </form>
+          <b className="places__found">
+            {offers.length} place{offers.length > 1 && 's'} to stay in {offers[0].city.name}{' '}
+          </b>
+          <Sort current={activeSort} setter={setActiveSort}/>
           <div className="cities__places-list places__list tabs__content">
 
             {showCards}
