@@ -3,7 +3,6 @@ import PlacesList from '../../components/places-list/places-list';
 import { useAppDispatch, useAppSelector } from '../../components/hooks/use-store';
 import { CITIES } from '../../const';
 import { offersSelectors, setCity } from '../../store/slices/offers-slice';
-//import { selectCity, selectFilteredOffers } from '../../store/selectors/selectors';
 
 
 export default function MainScreen(): JSX.Element {

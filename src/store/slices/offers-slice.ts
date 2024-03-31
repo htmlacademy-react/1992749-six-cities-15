@@ -24,7 +24,6 @@ export const offersSlice = createSlice({
   }
 });
 
-// export const offersActions = offersSlice.actions;
 export const {setCity} = offersSlice.actions;
 export const offersSelectors = offersSlice.selectors;
 

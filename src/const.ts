@@ -87,3 +87,16 @@ export const CITIES = [
   'Dusseldorf',
 ];
 
+export const SORT_OPTIONS = [
+  'Popular',
+  'Price: low to high',
+  'Price: high to low',
+  'Top rated first'
+] satisfies Record<SortOptions, string>;
+
+export const enum SortOptions {
+  Popular = 0,
+  PriceLowToHigh = 1,
+  PriceHighToLow = 2,
+  TopRatedFirst = 3
+}
