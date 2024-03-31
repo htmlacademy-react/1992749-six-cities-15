@@ -38,7 +38,9 @@ export default function PlacesList({offers}: PlacesListProps): JSX.Element {
       <div className="cities__places-container container">
         <section className="cities__places places">
           <h2 className="visually-hidden">Places</h2>
-          <b className="places__found">312 places to stay in Amsterdam</b>
+          <b className="places__found">
+            {offers.length} place{offers.length > 1 && 's'} to stay in {offers[0].city.name}{' '}
+          </b>
           <Sort current={activeSort} setter={setActiveSort}/>
           <div className="cities__places-list places__list tabs__content">
 
